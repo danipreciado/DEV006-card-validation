@@ -1,6 +1,7 @@
 const validator = { 
 
   isValid:function(n){
+    console.log(n)
 
      // luhn.js module
  {
