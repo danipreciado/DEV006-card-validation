@@ -4,17 +4,35 @@
     <meta charset="utf-8">
     <title>Credit card validator</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet"/>
   </head>
   <body>
-    <header></header>
-    <main>
-      <label for="credit-card-number">Credit Card Number:</label>
-      <input type="text" id="cardNo" name="credit-card-number" maxlength="16" placeholder="Enter your credit card number" required>
-      <button type="button" id="validateBtn">Checkout</button>
+    
 
-      <p id="validator"></p>
-    </main>
-    <footer></footer>
-    <script src="index.js"></script>
+    <div class="container">
+
+      <div class="item1"></div>
+      <div class="item2"></div>
+      
+      <div class="item3">
+        
+        <div class="card">
+          
+
+        </div> 
+        
+        <div id="creditCardGeneral" class="payment">
+          <label for="credit-card-number">Credit Card Number</label>
+          <input type="text" id="creditCardNumber" name="credit-card-number" maxlength="16" placeholder="Enter your credit card number">
+          <p id="validationMsg"></p>
+
+          <button type="button" id="validateBtn">Checkout</button> 
+        </div> 
+         
+     </div>  
+      
+    </div>
+    
+    <script type="module" src="index.js"></script>
   </body>
 </html>

@@ -1,27 +1,34 @@
 import validator from './validator.js';
 
-const cardNo = document.getElementById("cardNo"); 
-const validateBtn = document.getElementById("validateBtn");
+const validateBtn = document.getElementById ("validateBtn");
+const creditCardNumber = document.getElementById("creditCardNumber");
 
-validateBtn.addEventListener("click",function(){
-    const isValid = validator.isValid (cardNo.value)
-    let validation = document.getElementById("validation");
+validateBtn.addEventListener("click", () => {
 
-    if(isValid){
-        validation.textContent = "Es válida"
-    } 
-    else {
-        validation.textContent = "No es válida"
+  const isValid = validator.isValid(creditCardNumber.value);
 
-    }
+  if (isValid) {
+    console.log("Válida"); //aquí debe de ir un mensaje que diga que la tarjeta es válida
 
+  } else {
+    console.log("Inválida"); //aquí debe de ir un mensaje que diga que la tarjeta es inválida
 
-}
+  }
 
 
+});
+
+creditCardNumber.addEventListener("input", () => {
+  const ccNumber = creditCardNumber.value;
+
+  
+  const maskedNumber = validator.maskify(ccNumber);
+  //console.log(maskedNumber); 
+
+  creditCardNumber.value=maskedNumber; //también quiero que se separe el número en grupos de 4 dígitos
 
 
-)
 
-console.log(validator);
+})
+
 
