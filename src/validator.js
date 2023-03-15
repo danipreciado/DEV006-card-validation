@@ -1,23 +1,30 @@
 const validator = { 
 
   
-  isValid:(d) => {
+  isValid:(carddigits) => {
 
 
     let sum = 0;
     let isEven = false;
-
     
-    const digitsOnly = d.replace(/\D/g, ''); // eliminar lo que no sea un dígito
+    if (carddigits === null || carddigits === ""){
+      return false
+    }
+    console.log("carddigits = " +carddigits);
+    console.log(typeof(carddigits));
+
+    //console.log(creditCardNumberval);
+    const digitsOnly = carddigits.replace(/\D/g, ''); // eliminar lo que no sea un dígito
     const trimmed = digitsOnly.replace(/\s+/g, ''); // eliminar espacios en blanco
     const reversed = trimmed.split('').reverse().join(''); // cardnumber al revés
 
+    
 
 
-    console.log(reversed);
+    
     for (let i = 0; i < reversed.length; i++) {
       let digit = parseInt(reversed[i]);
-      console.log(digit);
+      //console.log(digit);
       //console.log(sum);
       if (isEven) {
         digit *= 2;
@@ -28,7 +35,7 @@ const validator = {
 
       isEven = !isEven;
       sum += digit;
-      console.log(sum);
+      //console.log(sum);
     }
 
     return sum % 10 === 0;
