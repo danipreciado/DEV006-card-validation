@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Credit card validator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <nav class="top-menu">
+      <ul>
+        <li><img src="/images/kisslogo.png" alt="Logo" class="logo"></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">PRODUCTS</a></li>
+        <li class="right-menu">
+          <a href="#">Sign In</a>
+          <span class="cart-icon"></span>
+        </li>
+        
+      </ul>
+    </nav>
+
+    <div class="container">
+
+      <div class="item1"></div>
+      <div class="item2"></div>
+      
+      <div class="item3">
+        
+        <div class="card">
+          <p id="cardno">XXXX XXXX XXXX XXXX</p>
+
+        </div> 
+        
+        <div id="creditCardGeneral" class="payment">
+          <label for="credit-card-number">Credit Card Number</label>
+          <input type="text" id="creditCardNumber" name="credit-card-number" maxlength="16" placeholder="Credit card number">
+          <p id="validationMsg"></p>
+
+          <label for="full-name">Cardholder's Name</label>
+          <input type="text" id="fullName" name="full-name" placeholder="Enter your full name">
+
+          <label for="expire-date">Expire Date </label>
+          <input type="text" id="expireDate" name="expire-date" class="smallInput" placeholder="MM/YY">
+
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" name="cvv" class="smallInput" placeholder="123">
+
+          <button type="button" id="validateBtn">Checkout</button> 
+        </div> 
+        
+     </div>  
+      
+    </div>
+    
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
