@@ -25,7 +25,7 @@ creditCardNumber.addEventListener("input", () => {
   const maskedNumber = validator.maskify(ccNumber);
   //console.log(maskedNumber); 
 
-  creditCardNumber.value=maskedNumber; //también quiero que se separe el número en grupos de 4 dígitos
+  //creditCardNumber.value=maskedNumber; //también quiero que se separe el número en grupos de 4 dígitos
 
 
 
