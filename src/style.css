@@ -61,7 +61,7 @@ body {
     display: inline-block;
     width: 24px;
     height: 24px;
-    background-image: url("/images/shoppingicon.png");
+    background-image: url("../images/shoppingicon.png");
     background-size: cover;
     margin-left: 10px;
 }
