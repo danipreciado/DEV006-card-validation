@@ -154,9 +154,9 @@ body {
     border-radius: 5px;
 }
 .shopping-cart {
-    flex-basis: 30%;
-    height: 500px;
-    width: 800px;
+    
+    height: 550px;
+    width: 500px;
     border-radius: 10px;
     background-color: #d8d4e4;
     padding: 10px;
@@ -166,6 +166,14 @@ body {
     
 }
 
+#cartTittle {
+    margin: 0;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+}
+
 .item {
     display: flex;
     flex-direction: row;
@@ -173,7 +181,7 @@ body {
     margin: 20px;
   }
   
-  .item img {
+.item img {
     width: 150px;
     height: 150px;
     margin-right: 20px;
