@@ -88,11 +88,11 @@ body {
     top: -5px; 
     left: 50%;
     transform: translateX(-50%);
-    font-family: 'Inconsolata', monospace;
-    font-size: 1.5rem;
+    
     display: flex;
    justify-content: center;
     align-items: center;
+    
 
     
   
@@ -105,9 +105,19 @@ body {
     position: absolute;
     width: 100%;
 }
+.card-chip {
+    float:left;
+    margin: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    
+  }
 #cardno {
     
-    z-index: 1; /* bring the element to the front */
+    z-index: 1;
     position: absolute;
     bottom: 60px;
     left: 50%;
@@ -115,8 +125,25 @@ body {
     text-align: center;
     color: #6f7886;
     white-space: nowrap;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5rem;
     
 }
+#cardname{
+    
+    z-index: 1;
+    position: absolute;
+    bottom: 26px;
+    left: 34%;
+    transform: translateX(-50%);
+    text-align: left;
+    color: #6f7886;
+    white-space: nowrap;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1 rem;
+    
+}
+
 #validationMsg {
     font-family: Arial, sans-serif;
     font-size: 14px;

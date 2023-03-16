@@ -3,6 +3,8 @@ import validator from './validator.js';
 const validateBtn = document.getElementById ("validateBtn");
 const creditCardNumber = document.getElementById("creditCardNumber");
 const cardNoElement = document.getElementById("cardno");
+const fullname = document.getElementById("fullname")
+const cardnameElement = document.getElementById("cardname")
 const validationMsg = document.getElementById("validationMsg");
 let maskedNumber = "";
 let unaltered = null;
@@ -38,6 +40,8 @@ creditCardNumber.addEventListener("input", () => {
   
   //dynamically updating masked digits in card, groups digits in 4 
   cardNoElement.innerText = maskedNumber.match(/.{1,4}/g).join(' ');
+  cardnameElement.innerText = fullname.value;
+  console.log(fullname);
 
 })
 
