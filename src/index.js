@@ -7,46 +7,64 @@ const fullname = document.getElementById("fullName");
 const cardnameElement = document.getElementById("cardname");
 const validationMsg = document.getElementById("validationMsg");
 let maskedNumber = "";
-let unaltered = null;
-
-validateBtn.addEventListener("click", () => {
-  
-  const isValid = validator.isValid(unaltered);
-  
-
-  if (isValid) {
-    console.log("Válida"); //aquí debe de ir un mensaje que diga que la tarjeta es válida
-    validationMsg.textContent = "Valid credit card";
-
-  } else {
-    console.log("Inválida"); //aquí debe de ir un mensaje que diga que la tarjeta es inválida
-    validationMsg.textContent = "Please enter a valid credit card";
-
-  }
-  unaltered = "";
-
-});
+let unaltered = "";
+let creditCardNumberval = creditCardNumber.value;
+const cclength = creditCardNumberval.length;
 
 creditCardNumber.addEventListener("input", () => {
-  const ccNumber = creditCardNumber.value;
-  unaltered = ccNumber;
-  maskedNumber = validator.maskify(ccNumber);
+  const inputValue = creditCardNumber.value;
+  const numericValue = inputValue.replace(/[^0-9]/g, '');
   
-  //console.log(maskedNumber); 
+  if (inputValue !== numericValue) {
+    // Let the user know only numeric char allowed
+    validationMsg.textContent = "Please enter only numeric characters";
+  } else {
+    // If only numbers are entered, proceed with maskify
+    unaltered = numericValue;
+    const ccNumber = unaltered;
 
-  creditCardNumber.value=maskedNumber; 
-  //console.log(creditCardNumber.value);
+    //creditCardNumber.value= maskedNumber; 
+    //console.log(creditCardNumber.value);
 
-  
-  //dynamically updating masked digits in card, groups digits in 4 
-  cardNoElement.innerText = maskedNumber.match(/.{1,4}/g).join(' ');
-  
-
+    maskedNumber = validator.maskify(ccNumber);
+    cardNoElement.innerText = maskedNumber.match(/.{1,4}/g).join(' ');
+    validationMsg.textContent = "";
+  }
 });
+
 
 fullname.addEventListener("input", () => {
   //dynamically update user's name in card
   cardnameElement.innerText = fullname.value;
+});
+
+
+validateBtn.addEventListener("click", () => {
+  
+  const isValid = validator.isValid(unaltered);
+  if (fullname.value !== "" || cclength > 0 ){
+    if (isValid) {
+      //console.log("Válida"); aquí debe de ir un mensaje que diga que la tarjeta es válida
+      validationMsg.textContent = "Valid credit card";
+
+    } else {
+      //console.log("Inválida"); aquí debe de ir un mensaje que diga que la tarjeta es inválida
+      validationMsg.textContent = "Please enter a valid credit card";
+
+    }
+
+  } else {
+    validationMsg.textContent = "Please enter all the card details."
+  }
+
+  unaltered = "";
+  creditCardNumberval = "";
+  //console.log("this is ccNumberval:" + creditCardNumberval);
+
+
 })
+
+
+
 
 
